@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: teal;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top:40px;
+    width: 100%;
+    height: calc(100vh - 40px);
+    background-color: white;
+    display: flex;
+    
+}
+.container .left{
+    flex:30%;
+    border-right:1px solid black;
+
+}
+
+.container .right{
+    flex:70%;
+    background-color:  #e5ddd5;
+}
+
+
+/* Header */
+.left .header{
+    width: 100%;
+    height: 60px;
+    background-color: #ededed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 15px;
+}
+.left .header .img{
+    width:40px;
+    height: 40px;
+    /* border:1px solid red; */
+    border-radius:50%;
+    overflow:hidden;
+    cursor:pointer
+}
+.left .header .img .dp{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.left .header .nav_links{
+    list-style: none;
+    display: flex;
+}
+.left .header .nav_links li{
+    cursor:pointer;
+    width: 45px;
+    font-size:24px;
+    /* background-color: gray; */
+}
+.left .header .nav_links .nav_icon{
+    color:51585c;
+}
+
+/* search bar */
+.left .search{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(237, 237, 237);
+}
+.left .search .content{
+    width: 90%;
+    height: 85%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding-left:15px;
+    border-radius:25px;
+}
+.left .search .content input{
+    margin-left:5px;
+border:none;
+outline:none;
+}
+
+/* Chatlist */
+.left .chatlist{
+    width: 100%;
+    height: calc(100% - 105px);
+    overflow-y:auto;
+}
+.left .chatlist .frienduser{
+    width: 100%;
+    height: 70px;
+    display:flex;
+    align-items: center;
+    padding:0 15px;
+    background-color: whitesmoke;
+    border-bottom:1px solid rgb(194, 189, 189);
+    cursor:pointer;
+}
+.left .chatlist .frienduser:hover{
+    background-color: rgb(232 232 232);
+}
+.left .chatlist .active{
+    background-color: rgb(232 232 232);;
+}
+.left .chatlist .unread .friend_name b{
+    color:rgb(62, 215, 62);
+}
+.left .chatlist .unread .recent b{
+    width:20px;
+    height: 20px;
+    padding:0 5px;
+    padding-top:2px;
+    border-radius:50%;
+    background-color:rgb(62, 215, 62);
+    color:white
+}
+.left .chatlist .frienduser .info{
+    margin-left:15px;
+    width: 100%;
+}
+.left .chatlist .frienduser .img{
+    
+    height: 45px;
+    min-width: 45px;
+    /* border:1px solid red; */
+    border-radius:50%;
+    overflow:hidden;
+    cursor:pointer
+}
+.left .chatlist .frienduser .img .dp{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.left .chatlist .frienduser .info .friend_name{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+.left .chatlist .frienduser .info .friend_name b{
+    font-size: 12px;
+}
+.left .chatlist .frienduser .info .recent{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Design right side */
+.right .right_header{
+    width:100%;
+    display: flex;
+    height: 60px;
+    background-color:#ededed;
+    align-items: center;
+    padding:0 25px;
+    /* opacity:1; */
+    
+}
+.right .right_header .img{
+    width:40px;
+    height: 40px;
+    /* border:1px solid red; */
+    border-radius:50%;
+    overflow:hidden;
+    cursor:pointer
+}
+.right .right_header .img .dp{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.right .right_header .r{
+    width: 100%;
+    margin-left:15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right .right_header .r .info{
+    color:51585c;
+}
+.right .right_header .r .info b{
+    font-size:12px;
+    color:51585c;
+}
+.right .right_header .r .nav_links{
+    
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    list-style:none;
+}
+.right .right_header .r .nav_links  #first{
+    
+    margin-right:16px;
+}
+
+
+/* Chatbox */
+
+.right .chatbox{
+    width: 100%;
+    height: calc(100vh - 160px);
+    padding:40px;
+    background-color: #e5ddd5;
+    overflow-y:auto;
+    position:relative;
+}
+.right .chatbox .message{
+    width: 100%;
+    display: flex;
+    margin-bottom:10px;
+    position:relative;
+}
+.right .chatbox .own-message p::before{
+    content:'';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top:0;
+    right:-12px;
+    background: linear-gradient(135deg, #92dc92 0%, #92dc92 50%, transparent 50%, transparent);
+}
+
+
+.right .chatbox .message p{
+    position:relative;
+    min-width: 10%;
+    max-width: 65%;
+    background-color: white;
+    padding:12px;
+    border-radius: 10px;
+    text-align: right;
+    font-size:20px;
+
+}
+.right .chatbox  .own-message{
+    justify-content: flex-end;
+}
+.right .chatbox .friend-message p{
+
+    text-align:left;
+}
+.right .chatbox .own-message p{
+    background-color: #92dc92;
+}
+
+.right .chatbox .message p span{
+    font-size:14px;
+    margin:10px;
+}
+
+
+/* UserInput */
+
+.right .userinput{
+    width: 100%;
+    position:fixed;
+    bottom:0;
+    height: 60px;
+    background-color:rgb(232 232 232);
+    display: flex;
+    padding:0 15px;
+    align-items: center;
+}
+
+.userinput .nav_icons{
+    width: 6.4vw;
+    display: flex;
+    list-style: none;
+    margin-right:15px;
+    align-items:center;
+    font-size:27px;
+    justify-content: space-between;
+}
+
+.userinput .input{
+    display: flex;
+    align-items: center;
+    width: 58vw;
+    height: 40px;
+
+}
+.userinput .input input{
+    width: 100%;
+    height: 100%;
+    border:none;
+    outline:none;
+    padding:0 15px;
+    border-radius:25px;
+    margin-right:15px
+}
+
